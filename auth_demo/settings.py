@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Hello',
+    'accounts',
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -102,6 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'accounts.User'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.EmailAuth',
+
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
